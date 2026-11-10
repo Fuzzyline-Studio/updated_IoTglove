@@ -225,6 +225,7 @@ void StartSurConnect();
 void StopSurConnect();
 void UpdateSurConnectFlow();
 void ShowRolePage();
+void HandleVibeChange();
 void ApplyRevivalCooldownChange(int previous_count);
 bool IsFinalLifeTaken();
 void StartPendingRevivalVibration();

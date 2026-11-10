@@ -575,6 +575,10 @@ void ShowRolePage()
         irrecv.resume();
         ir_receive_timer.enable(ir_receive_timer_id);
         UpdateHmiBattery();
+        // 유령 진입 때 motor_on=false로 꺼 둔 근접 진동을 현재 vibe 값으로 복원한다.
+        // DataChange는 vibe 값이 바뀔 때만 HandleVibeChange를 부르므로, 술래와 같은 방에서
+        // 유령→생존자가 되면(vibe 3→3) 위치가 바뀔 때까지 진동이 꺼진 채로 남았다.
+        HandleVibeChange();
     }
     else if (IsTaggerRole(role))
     {
